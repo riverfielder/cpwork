@@ -149,9 +149,11 @@ func (l *Lexer) NextToken() Token {
 			l.readChar()
 			tok.Lexeme = "=="
 			tok.Type = EQ
+			l.symbols.AddOperator("==", EQ) // 动态添加运算符
 		} else {
 			tok.Lexeme = string(l.ch)
 			tok.Type = ASSIGN
+			l.symbols.AddOperator("=", ASSIGN) // 动态添加运算符
 			l.readChar()
 
 			// 检查赋值符号后是否直接跟着分号或换行
@@ -168,13 +170,16 @@ func (l *Lexer) NextToken() Token {
 		}
 		l.readChar()
 	case '+':
-		tok = Token{Type: PLUS, Lexeme: string(l.ch), Line: l.line} // 添加行号
+		tok = Token{Type: PLUS, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddOperator("+", PLUS) // 动态添加运算符
 		l.readChar()
 	case '-':
-		tok = Token{Type: MINUS, Lexeme: string(l.ch), Line: l.line} // 添加行号
+		tok = Token{Type: MINUS, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddOperator("-", MINUS) // 动态添加运算符
 		l.readChar()
 	case '*':
-		tok = Token{Type: MULTIPLY, Lexeme: string(l.ch), Line: l.line} // 添加行号
+		tok = Token{Type: MULTIPLY, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddOperator("*", MULTIPLY) // 动态添加运算符
 		l.readChar()
 	case '/':
 		// 检查是否是注释
@@ -182,22 +187,28 @@ func (l *Lexer) NextToken() Token {
 			l.skipComment()
 			return l.NextToken() // 递归调用获取下一个有效token
 		}
-		tok = Token{Type: DIVIDE, Lexeme: string(l.ch), Line: l.line} // 添加行号
+		tok = Token{Type: DIVIDE, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddOperator("/", DIVIDE) // 动态添加运算符
 		l.readChar()
 	case '>':
 		tok = Token{Type: GT, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddOperator(">", GT) // 动态添加运算符
 		l.readChar()
 	case '<':
 		tok = Token{Type: LT, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddOperator("<", LT) // 动态添加运算符
 		l.readChar()
 	case '(':
 		tok = Token{Type: LPAREN, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddDelimiter("(", LPAREN) // 动态添加界符
 		l.readChar()
 	case ')':
 		tok = Token{Type: RPAREN, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddDelimiter(")", RPAREN) // 动态添加界符
 		l.readChar()
 	case ';':
 		tok = Token{Type: SEMICOLON, Lexeme: string(l.ch), Line: l.line}
+		l.symbols.AddDelimiter(";", SEMICOLON) // 动态添加界符
 		l.readChar()
 	case '#':
 		tok.Type = EOF
@@ -219,11 +230,22 @@ func (l *Lexer) NextToken() Token {
 			// 检查是否是关键字
 			if keywordType, ok := l.symbols.Keywords[tok.Lexeme]; ok {
 				tok.Type = keywordType
+			} else if tok.Lexeme == "if" || tok.Lexeme == "then" || tok.Lexeme == "else" {
+				// 动态添加关键字
+				switch tok.Lexeme {
+				case "if":
+					tok.Type = IF
+					l.symbols.AddKeyword("if", IF)
+				case "then":
+					tok.Type = THEN
+					l.symbols.AddKeyword("then", THEN)
+				case "else":
+					tok.Type = ELSE
+					l.symbols.AddKeyword("else", ELSE)
+				}
 			} else {
 				tok.Type = IDENTIFIER
-				// 添加到标识符表并获取索引
-				index := l.symbols.AddIdentifier(tok.Lexeme)
-				tok.Value = index
+				l.symbols.AddIdentifier(tok.Lexeme)
 			}
 			return tok
 

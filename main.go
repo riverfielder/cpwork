@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// 读取源文件
-	sourceCode, err := os.ReadFile("unitTest.txt")
+	sourceCode, err := os.ReadFile("source.txt")
 	if err != nil {
 		fmt.Println("Error reading source file:", err)
 		return
@@ -30,7 +30,7 @@ func main() {
 	writer := bufio.NewWriter(outputFile)
 
 	// 词法分析过程
-	fmt.Fprintf(writer, "=== Lexical Analysis Results Debug ===\n")
+	fmt.Fprintf(writer, "=== Lexical Analysis Results  ===\n")
 	for {
 		token := l.NextToken()
 		lexer.PrintToken(writer, token)

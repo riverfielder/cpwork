@@ -1,16 +1,23 @@
-=== Lexical Analysis Results Debug ===
-Line 1: Type: IDENTIFIER, Lexeme: spaces, Index: 0
-Line 1: Type: ASSIGN, Lexeme: =
-Line 1: Type: NUMBER, Lexeme: 1
-Line 1: Type: PLUS, Lexeme: +
-Line 1: Type: NUMBER, Lexeme: 2
-Line 1: Type: IDENTIFIER, Lexeme: tabs, Index: 1
-Line 1: Type: ASSIGN, Lexeme: =
-Line 1: Type: NUMBER, Lexeme: 3
-Line 1: Type: MINUS, Lexeme: -
-Line 1: Type: NUMBER, Lexeme: 4
-Line 1: Type: SEMICOLON, Lexeme: ;
-Line 4: Type: EOF, Lexeme: #
+=== Lexical Analysis Results  ===
+Line 1: Type: IF, Lexeme: if (keyword)
+Line 1: Type: IDENTIFIER, Lexeme: x
+Line 1: Type: GT, Lexeme: >
+Line 1: Type: NUMBER, Lexeme: 10
+Line 1: Type: THEN, Lexeme: then (keyword)
+Line 2: Type: IDENTIFIER, Lexeme: result
+Line 2: Type: ASSIGN, Lexeme: =
+Line 2: Type: IDENTIFIER, Lexeme: x
+Line 2: Type: MULTIPLY, Lexeme: *
+Line 2: Type: NUMBER, Lexeme: 2
+Line 2: Type: SEMICOLON, Lexeme: ;
+Line 3: Type: ELSE, Lexeme: else (keyword)
+Line 4: Type: IDENTIFIER, Lexeme: result
+Line 4: Type: ASSIGN, Lexeme: =
+Line 4: Type: IDENTIFIER, Lexeme: x
+Line 4: Type: DIVIDE, Lexeme: /
+Line 4: Type: NUMBER, Lexeme: 2
+Line 4: Type: SEMICOLON, Lexeme: ;
+Line 5: Type: EOF, Lexeme: #
 
 === Keyword Table ===
 if
@@ -18,26 +25,18 @@ then
 else
 
 === Identifier Table ===
-0: spaces
-1: tabs
+0: x
+1: result
 
 === Constant Table ===
-4.000000: 4
-1.000000: 1
+10.000000: 10
 2.000000: 2
-3.000000: 3
 
 === Operator Table ===
-+
--
+=
 *
 /
-=
 >
-<
-==
 
 === Delimiter Table ===
-(
-)
 ;
