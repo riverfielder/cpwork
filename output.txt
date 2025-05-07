@@ -1,0 +1,43 @@
+=== Lexical Analysis Results Debug ===
+Line 1: Type: IDENTIFIER, Lexeme: spaces, Index: 0
+Line 1: Type: ASSIGN, Lexeme: =
+Line 1: Type: NUMBER, Lexeme: 1
+Line 1: Type: PLUS, Lexeme: +
+Line 1: Type: NUMBER, Lexeme: 2
+Line 1: Type: IDENTIFIER, Lexeme: tabs, Index: 1
+Line 1: Type: ASSIGN, Lexeme: =
+Line 1: Type: NUMBER, Lexeme: 3
+Line 1: Type: MINUS, Lexeme: -
+Line 1: Type: NUMBER, Lexeme: 4
+Line 1: Type: SEMICOLON, Lexeme: ;
+Line 4: Type: EOF, Lexeme: #
+
+=== Keyword Table ===
+if
+then
+else
+
+=== Identifier Table ===
+0: spaces
+1: tabs
+
+=== Constant Table ===
+4.000000: 4
+1.000000: 1
+2.000000: 2
+3.000000: 3
+
+=== Operator Table ===
++
+-
+*
+/
+=
+>
+<
+==
+
+=== Delimiter Table ===
+(
+)
+;
