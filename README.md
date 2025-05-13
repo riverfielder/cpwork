@@ -110,5 +110,6 @@ Line 1: Type: NUMBER, Lexeme: 42, Value: 42.000000, Index: 0
 
 ```bash
 go run main.go test_correct.mini
+go run main.go test_error.mini
 ```
 

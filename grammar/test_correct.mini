@@ -1,18 +1,28 @@
-program example;
 begin
+    // 简单赋值
     x := 10;
-    y := 20;
+    y := x + 5 * 2;
     
-    if x > y then
-        max := x;
+    // if-then-else结构
+    if (x > 5) then
+        max := x
     else
         max := y;
     
-    while x < 100 do
+    // while循环
+    while (i < 10) do
     begin
-        x := x + 1;
-        sum := sum + x
+        i := i + 1;
+        sum := sum + i
     end;
     
-    is_valid := true
+    // 逻辑表达式
+    flag := (a > b) && (c <= d);
+    
+    // 嵌套块
+    begin
+        temp := 100;
+        if (temp = 100) then
+            result := true
+    end
 end.

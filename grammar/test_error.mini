@@ -1,18 +1,21 @@
-program example;
+program error_example;
 begin
+    // 缺少分号
     x := 10
-    y := 20;  // 缺少分号
+    y := 20;
     
-    if x > y then
-        max := x
-    else       // then分支缺少分号
-        max := y;
+    // if缺少then
+    if (x > y)
+        max := x;
     
-    while x < 100  // 缺少do关键字
+    // while缺少do
+    while (i < 10)
+        i := i + 1;
+    
+    // 不完整表达式
+    z := 1 + ;
+    
+    // 未闭合的块
     begin
-        x := x + 1
-        sum := sum + x;
-    end;
-    
-    is_valid := true
-end
+        a := 5
+end.

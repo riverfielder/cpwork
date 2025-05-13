@@ -1,0 +1,32 @@
+program complex;
+begin
+    // 嵌套if-while
+    if (mode = 1) then
+    begin
+        counter := 0;
+        while (counter < 10) do
+        begin
+            // 多层嵌套
+            if (counter % 2 = 0) then
+                total := total + counter
+            else
+                total := total - counter;
+                
+            counter := counter + 1
+        end
+    end;
+    
+    // 复杂表达式
+    result := ((a + b) * (c - d)) / (e % f);
+    
+    // 多语句块
+    begin
+        init := 0;
+        step := 2;
+        limit := 100;
+        while (init < limit) do
+        begin
+            init := init + step
+        end
+    end
+end.
