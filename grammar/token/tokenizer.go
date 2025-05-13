@@ -118,8 +118,22 @@ func (t *Tokenizer) NextToken() Token {
 }
 
 func (t *Tokenizer) skipWhitespace() {
-	for t.ch == ' ' || t.ch == '\t' || t.ch == '\n' || t.ch == '\r' {
-		t.readChar()
+	for {
+		switch t.ch {
+		case ' ', '\t', '\n', '\r':
+			t.readChar()
+		case '/':
+			if t.peekChar() == '/' {
+				// 跳过单行注释
+				for t.ch != '\n' && t.ch != 0 {
+					t.readChar()
+				}
+			} else {
+				return
+			}
+		default:
+			return
+		}
 	}
 }
 

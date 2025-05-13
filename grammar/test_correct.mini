@@ -1,28 +1,26 @@
+// 简单赋值
+x := 10;
+y := x + 5 * 2;
+
+// if-then结构
+if (x > 5) then
+    max := x;
+
+// while循环
+i := 0;
+while (i < 10) do
 begin
-    // 简单赋值
-    x := 10;
-    y := x + 5 * 2;
-    
-    // if-then-else结构
-    if (x > 5) then
-        max := x
-    else
-        max := y;
-    
-    // while循环
-    while (i < 10) do
-    begin
-        i := i + 1;
-        sum := sum + i
-    end;
-    
-    // 逻辑表达式
-    flag := (a > b) && (c <= d);
-    
-    // 嵌套块
-    begin
-        temp := 100;
-        if (temp = 100) then
-            result := true
-    end
+    i := i + 1;
+    sum := sum + i
+end;
+
+// 逻辑表达式
+flag := (a > b) && (c <= d);
+
+// 嵌套块
+begin
+    temp := 100;
+    if (temp = 100) then
+        result := true
+end
 end.

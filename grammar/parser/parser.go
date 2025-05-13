@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"mini-parser/token"
 	"strconv"
+	"strings"
 )
 
 type (
@@ -155,6 +156,10 @@ func (p *Parser) parseWhileStatement() *WhileExpression {
 }
 
 func (p *Parser) parseStatement() Statement {
+	// 跳过注释token
+	for p.curToken.Type == token.ILLEGAL && strings.HasPrefix(p.curToken.Literal, "//") {
+		p.nextToken()
+	}
 	switch p.curToken.Type {
 	case token.IDENT:
 		return p.parseAssignStatement()
