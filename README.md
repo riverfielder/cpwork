@@ -88,3 +88,30 @@ Line 1: Type: NUMBER, Lexeme: 42, Value: 42.000000, Index: 0
 ## 许可证
 
 MIT License
+
+# Mini语言语法分析器
+
+一个用Go实现的Mini语言语法分析程序，能够检查源代码的语法正确性，支持算术表达式、逻辑表达式、赋值语句、if-then分支和while循环等基本结构。
+
+## 功能特性
+
+- 词法分析（Tokenizer）
+- 语法分析（Parser）
+- 错误定位（行列号显示）
+- 支持以下语法结构：
+  - 变量赋值（:=）
+  - 算术运算（+ - * /）
+  - 逻辑运算（&& || !）
+  - 比较运算（> < = !=）
+  - if-then-else分支
+  - while-do循环
+  - 代码块（begin-end）
+
+## 快速开始
+
+### 构建项目
+
+```bash
+go run main.go test_correct.mini
+```
+

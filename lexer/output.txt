@@ -1,0 +1,36 @@
+=== Lexical Analysis Results  ===
+Line 1: Type: IDENTIFIER, Lexeme: empty
+Line 1: Type: ERROR, Lexeme:  --- ERROR: missing expression after '='
+Line 1: Type: SEMICOLON, Lexeme: ;
+Line 2: Type: IDENTIFIER, Lexeme: half
+Line 2: Type: ASSIGN, Lexeme: =
+Line 2: Type: ERROR, Lexeme:  --- ERROR: illegal number format: decimal point must be followed by digits
+Line 3: Type: IDENTIFIER, Lexeme: strange
+Line 3: Type: ASSIGN, Lexeme: =
+Line 3: Type: ERROR, Lexeme:  --- ERROR: illegal number format: decimal point must be followed by digits
+Line 3: Type: NUMBER, Lexeme: 2
+Line 3: Type: SEMICOLON, Lexeme: ;
+Line 4: Type: IDENTIFIER, Lexeme: weird
+Line 4: Type: ASSIGN, Lexeme: =
+Line 4: Type: ERROR, Lexeme:  --- ERROR: illegal identifier: cannot start with number
+Line 4: Type: ERROR, Lexeme: . --- ERROR: illegal character
+Line 4: Type: ERROR, Lexeme:  --- ERROR: illegal identifier: cannot start with number
+Line 4: Type: SEMICOLON, Lexeme: ;
+Line 5: Type: EOF, Lexeme: #
+
+=== Keyword Table ===
+
+=== Identifier Table ===
+0: empty
+1: half
+2: strange
+3: weird
+
+=== Constant Table ===
+2.000000: 2
+
+=== Operator Table ===
+=
+
+=== Delimiter Table ===
+;

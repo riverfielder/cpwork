@@ -1,0 +1,18 @@
+program example;
+begin
+    x := 10;
+    y := 20;
+    
+    if x > y then
+        max := x;
+    else
+        max := y;
+    
+    while x < 100 do
+    begin
+        x := x + 1;
+        sum := sum + x
+    end;
+    
+    is_valid := true
+end.

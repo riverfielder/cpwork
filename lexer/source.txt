@@ -1,7 +1,7 @@
-if x > 10 then
-    result = x * 2;
-else
-    result = x / 2;
+empty = ;           
+half = 3.           
+strange = 1..2;     
+weird = 1a.2b; 
 # 此行以上放入测试数据
 # 合法标识符和数字
 x = 42;
@@ -53,8 +53,6 @@ weird = 1a.2b;
    多行
    注释 */
 
-# 特殊符号
-symbols = */()<>+-;
 
 # 关键字测试
 if = 1;             # 允许但不好：关键字作为标识符
