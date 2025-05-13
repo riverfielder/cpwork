@@ -85,9 +85,6 @@ Line 1: Type: NUMBER, Lexeme: 42, Value: 42.000000, Index: 0
 
 - Go 1.21+ (仅标准库)
 
-## 许可证
-
-MIT License
 
 # Mini语言语法分析器
 
